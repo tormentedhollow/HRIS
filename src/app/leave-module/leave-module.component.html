@@ -1,0 +1,48 @@
+<br>
+<h4>Leave Credits</h4>
+<div class="d-flex justify-content-end">
+  <div class="mr-auto p-2"><button type="button" (click)="ngOnInit()" class="btn btn-outline-success" ><i class="fa fa-refresh" aria-hidden="true">Refresh</i></button></div>
+  <div class="p-2">
+      <input class="form-control" type="text" [(ngModel)]="objectsWithGettersFilter.Sname" placeholder="Search surname here..."> 
+  </div>
+</div>
+    
+<div class="table-responsive" >
+<table class="table table-striped" [mfData]="Employees" #mf="mfDataTable" [mfRowsOnPage]="10">
+    <thead>
+    <tr>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Leave Balance- VL</th>
+        <th>Leave Balance- SL</th>
+        <th>Total</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let item of mf.data | filterBy: objectsWithGettersFilter">
+        <td><img *ngIf="item.Photo" src="assets/photo/{{item.Photo}}" alt="" class="rounded" width="50" height= "50">
+        <img *ngIf="!item.Photo" src="assets/photo/no.gif" alt="" class="rounded" width="50" height= "50"></td>
+        <td>{{item.Sname | uppercase}}, {{item.Fname | uppercase}}</td>
+        <td>{{(item.lb) - (item.vlded) | number:'1.3-3'}} </td>
+        <td>{{(item.lb) - (item.slded) | number:'1.3-3'}}</td>
+        <td>{{(item.lb - item.vlded) + (item.lb - item.slded)  | number:'1.3-3'}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-primary" (click)="newTab(item)">View Statement</button>
+            <button type="button" class="btn btn-outline-success" (click)="open(item)">Entry</button>
+        </td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="6" >
+           <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+</div>
+<template ngbModalContainer></template> 
+        

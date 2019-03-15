@@ -1,0 +1,168 @@
+<br>
+<form #pdsForm4="ngForm" (ngSubmit)="onSubmit(pdsForm4)">
+      <div class="form-group col-sm-12">
+          <label class="control-label">Are you related by consanguinity or affinity to any of the following : </label>
+      </div>
+
+      <div class="form-group col-sm-12">
+          <div class="col-sm-12">
+              Within the third degree (for National Government Employees):<br> appointing authority, recommending authority, chief of office/bureau/department or person who has immediate supervision over you in the Office, Bureau or Department where you will be appointed?
+          </div>
+      </div>
+
+      <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input  ngModel required #q1="ngModel" type="radio" name="q1" value="yes" (click)="question.q1='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input  ngModel required #q1="ngModel" type="radio" name="q1" value="no" (click)="question.q1='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q1 === 'no'" ngModel  #q1_d="ngModel" name="q1_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+      <div class="form-group col-sm-12">
+          <div class="col-sm-12">
+              Within the fourth degree (for Local Government Employees):<br> appointing authority or recommending authority where you will be appointed?
+          </div>
+      </div>
+
+      <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q2="ngModel" type="radio" name="q2" value="yes" (click)="question.q2='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q2="ngModel" type="radio" name="q2" value="no" (click)="question.q2='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q2 === 'no'" ngModel  #q2_d="ngModel" name="q2_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+
+      <div class="form-group col-sm-12">
+      <br>
+      <br>
+          <label class="control-label"> Have you ever been formally charged?</label>
+      </div>
+      <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q3="ngModel" type="radio" name="q3" value="yes" (click)="question.q3='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q3="ngModel" type="radio" name="q3" value="no" (click)="question.q3='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q3 === 'no'" ngModel  #q3_d="ngModel" name="q3_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+
+      <div class="form-group col-sm-12">
+      <br>
+          <label class="control-label"> Have you ever been guilty of any administrative offense?</label>
+      </div>
+
+      <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q4="ngModel" type="radio" name="q4" value="yes" (click)="question.q4='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q4="ngModel" type="radio" name="q4" value="no" (click)="question.q4='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q4 === 'no'" ngModel #q4_d="ngModel" name="q4_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+
+      <div class="form-group col-sm-12">
+      <br>
+          <label class="control-label"> Have you ever been convicted of any crime or violation of any law, decree, ordinance or regulation by any court or tribunal?</label>
+      </div>
+
+      <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q5="ngModel" type="radio" name="q5" value="yes" (click)="question.q5='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q5="ngModel" type="radio" name="q5" value="no" (click)="question.q5='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q5 === 'no'" ngModel #q5_d="ngModel" name="q5_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+
+      <div class="form-group col-sm-12">
+      <br>
+          <label class="control-label"> Have you ever been separated from the service in any of the following modes: resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract, AWOL or phased out, in the public or private sector?</label>
+      </div>
+
+    <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q6="ngModel" type="radio" name="q6" value="yes" (click)="question.q6='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q6="ngModel" type="radio" name="q6" value="no" (click)="question.q6='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q6 === 'no'" ngModel  #q6_d="ngModel" name="q6_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+
+      <div class="form-group col-sm-12">
+      <br>
+          <label class="control-label"> Have you ever been a candidate in a national or local election (except Barangay election)?</label>
+      </div>
+
+     <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q7="ngModel" type="radio" name="q7" value="yes" (click)="question.q7='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q7="ngModel" type="radio" name="q7" value="no" (click)="question.q7='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q7 === 'no'" ngModel  #q7_d="ngModel" name="q7_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+      <div class="form-group col-sm-12">
+      <br>
+          <label class="control-label">Pursuant to: (a) Indigenous People's Act (RA 8371); (b) Magna Carta for Disabled Persons (RA 7277); and (c) Solo Parents Welfare Act of 2000 (RA 8972), please answer the following items: </label>
+      </div>
+
+      <div class="form-group col-sm-12">
+          <div class="col-sm-12">
+              Are you a member of any indigenous group?
+          </div>
+      </div>
+
+    <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q8="ngModel" type="radio" name="q8" value="yes" (click)="question.q8='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q8="ngModel" type="radio" name="q8" value="no" (click)="question.q8='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q8 === 'no'" ngModel  #q8_d="ngModel" name="q8_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+
+      <div class="form-group col-sm-12">
+          <div class="col-sm-12">
+              Are you differently abled?
+          </div>
+      </div>
+
+      <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q9="ngModel" type="radio" name="q9" value="yes" (click)="question.q9='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q9="ngModel" type="radio" name="q9" value="no" (click)="question.q9='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q9 === 'no'" ngModel  #q9_d="ngModel" name="q9_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+
+
+
+      <div class="form-group col-sm-12">
+          <div class="col-sm-12">
+              Are you a solo parent?
+          </div>
+      </div>
+
+     <div class="form-inline d-flex justify-content-between">
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q10="ngModel" type="radio" name="q10" value="yes" (click)="question.q10='yes'">Yes</label>
+          <label class="radio-inline mb-2 mr-sm-2 mb-sm-0 col-sm-1"><input ngModel required #q10="ngModel" type="radio" name="q10" value="no" (click)="question.q10='no'">No</label>
+      
+         <label class="sr-only" for="details">details</label>
+        <input  [disabled] = "question.q10 === 'no'" ngModel  #q10_d="ngModel" name="q10_d" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="If Yes, give details...">
+
+      </div><br>
+      
+<div class="d-flex justify-content-end">
+   <button type="submit" class="btn btn-primary pull-right"  >Proceed</button>
+  </div>
+  </form>

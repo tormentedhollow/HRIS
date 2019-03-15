@@ -1,0 +1,850 @@
+<div class="container">
+<br>
+<h3>PERSONAL DATA SHEET - Updating</h3> 
+<hr>
+<h4>I. PERSONAL INFORMATION</h4> 
+ <form (ngSubmit)="onSubmit()" #PDSForm="ngForm" (keydown.enter)="$event.preventDefault()">
+    <div class="row d-flex justify-content-between">
+      <div class="col">
+        <div class="form-group">
+        <label for="Surname">Surname</label>
+        <input type="text" class="form-control" id="Sname"
+                required
+                [(ngModel)]="Employees.Sname" name="Sname"
+                #Sname="ngModel">
+        <div [hidden]="Sname.valid || Sname.pristine"
+              class="alert alert-danger">
+          Surname is required
+        </div>
+        </div>
+      </div>
+       <div class="col">
+        <div class="form-group">
+        <label for="Firstname">Firstname</label>
+        <input type="text" class="form-control" id="Fname"
+                required
+                [(ngModel)]="Employees.Fname" name="Fname"
+                #Fname="ngModel">
+        <div [hidden]="Fname.valid || Fname.pristine"
+              class="alert alert-danger">
+          Firstname is required
+        </div>
+        </div>
+      </div>
+        <div class="col">
+        <div class="form-group">
+        <label for="Middlename">Middlename</label>
+        <input type="text" class="form-control" id="Mname"
+                required
+                [(ngModel)]="Employees.Mname" name="Mname"
+                #Mname="ngModel">
+        <div [hidden]="Mname.valid || Mname.pristine"
+              class="alert alert-danger">
+          Middlename is required
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-group">
+        <label for="Extension">Extension</label>
+        <select class="form-control" id="Extname"
+                [(ngModel)]="Employees.Extname" name="Extname"
+                #Extname="ngModel">
+          <option *ngFor="let ext of extensions" [value]="ext">{{ext}}</option>
+        </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-between">
+      <div class="col">
+        <div class="form-group">
+        <label for="Birthday">Birthday</label>
+        <input type="date" class="form-control" id="DoB"
+                required
+                [(ngModel)]="Employees.DoB" name="DoB"
+                #DoB="ngModel">
+        <div [hidden]="DoB.valid || DoB.pristine"
+              class="alert alert-danger">
+          Birthday is required
+        </div>
+        </div>
+      </div>
+       <div class="col-sm-5">
+        <div class="form-group">
+
+
+        <label for="PoB">Place of Birth</label>
+        <input type="text" class="form-control" id="PoB"
+                required
+                [(ngModel)]="Employees.PoB" name="PoB"
+                #PoB="ngModel">
+        <div [hidden]="PoB.valid || PoB.pristine"
+              class="alert alert-danger">
+          Place of Birth is required
+        </div>
+        </div>
+      </div>
+        <div class="col-sm-2">
+        <div class="form-group">
+        <label for="Sex">Sex {{Employees.sex}}</label>
+       <select class="form-control" id="sex"
+                [(ngModel)]="Employees.sex" name="sex" required
+
+                #sex="ngModel">
+        <option *ngFor="let s of sexx" [value]="s">{{s}}</option>
+        </select>
+        <div [hidden]="sex.valid || sex.pristine"
+              class="alert alert-danger">
+          Sex is required
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+        <label for="Civil Status">Civil Status</label>
+        <select class="form-control" id="civil_status"
+                [(ngModel)]="Employees.civil_status" name="civil_status" required
+                #civil_status="ngModel">
+          <option *ngFor="let cs of civilStatus" [value]="cs">{{cs}}</option>
+        </select>
+        </div>
+      </div>
+    </div>
+
+     <div class="row d-flex justify-content-between">
+      <div class="col-sm-3">
+        <div class="form-group">
+        <label for="Citizenship">Citizenship</label>
+        <select class="form-control" id="civil_status"
+                [(ngModel)]="Employees.citizenship" name="citizenship" required
+                #citizenship="ngModel">
+          <option *ngFor="let c of citizenships" [value]="c">{{c}}</option>
+        </select>
+        </div>
+      </div>
+       <div class="col-sm-2">
+        <div class="form-group">     
+        <label for="Height">Height (m)</label>
+        <input type="text" class="form-control" id="Height" required [(ngModel)]="Employees.Height" name="Height" #Height="ngModel">
+        <div [hidden]="Height.valid || Height.pristine" class="alert alert-danger"> Height is required </div>
+        </div>
+
+      </div>
+        <div class="col-sm-2">
+        <div class="form-group">     
+        <label for="Weight">Weight (kg)</label>
+        <input type="text" class="form-control" id="Weight" required [(ngModel)]="Employees.Weight" name="Weight" #Weight="ngModel">
+        <div [hidden]="Weight.valid || Weight.pristine" class="alert alert-danger"> Weight is required </div>
+        </div>
+      </div>
+
+        <div class="col-sm-2">
+        <div class="form-group">     
+        <label for="Blood Type">Blood Type</label>
+        <input type="text" class="form-control" id="BT" required [(ngModel)]="Employees.BT" name="BT" #BT="ngModel">
+        <div [hidden]="BT.valid || BT.pristine" class="alert alert-danger"> Blood Type is required </div>
+        </div>
+      </div>
+
+    </div>
+
+      <div class="row d-flex justify-content-between">
+
+       <div class="col">
+        <div class="form-group">     
+        <label for="GSIS_ID">GSIS_ID NO.</label>
+        <input type="text" class="form-control" id="GSIS_ID" required [(ngModel)]="Employees.GSIS_ID" name="GSIS_ID" #GSIS_ID="ngModel">
+        <div [hidden]="GSIS_ID.valid || GSIS_ID.pristine" class="alert alert-danger"> GSIS_ID is required </div>
+        </div>
+
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="PAG_IBIG">PAG_IBIG NO.</label>
+        <input type="text" class="form-control" id="PAGIBIG_ID" required [(ngModel)]="Employees.PAGIBIG_ID" name="PAGIBIG_ID" #PAGIBIG_ID="ngModel">
+        <div [hidden]="PAGIBIG_ID.valid || PAGIBIG_ID.pristine" class="alert alert-danger"> PAG_IBIG is required </div>
+        </div>
+      </div>
+
+        <div class="col">
+        <div class="form-group">     
+        <label for="SSS_ID">SSS NO.</label>
+        <input type="text" class="form-control" id="SSS_ID" [(ngModel)]="Employees.SSS_ID" name="SSS_ID" #SSS_ID="ngModel">
+        </div>
+      </div>
+
+        <div class="col">
+        <div class="form-group">     
+        <label for="PHILHEALTH_ID">PHILHEALTH NO.</label>
+        <input type="text" class="form-control" id="PHILHEALTH_ID" required [(ngModel)]="Employees.PHILHEALTH_ID" name="PHILHEALTH_ID" #PHILHEALTH_ID="ngModel">
+        <div [hidden]="PHILHEALTH_ID.valid || PHILHEALTH_ID.pristine" class="alert alert-danger"> PHILHEALTH_ID is required </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row d-flex justify-content-between">
+
+       <div class="col-sm-5">
+        <div class="form-group">     
+        <label for="Resedential Address">Resedential Address</label>
+        <input type="text" class="form-control" id="R_Address" required [(ngModel)]="Employees.R_Address" name="R_Address" #R_Address="ngModel">
+        <div [hidden]="R_Address.valid || R_Address.pristine" class="alert alert-danger"> Resedential Address is required </div>
+        </div>
+
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="Zip Code">Zip Code</label>
+        <input type="text" class="form-control" id="R_ZipCode" required [(ngModel)]="Employees.R_ZipCode" name="R_ZipCode" #R_ZipCode="ngModel">
+        <div [hidden]="R_ZipCode.valid || R_ZipCode.pristine" class="alert alert-danger"> Zip Code is required </div>
+        </div>
+      </div>
+
+        <div class="col">
+        <div class="form-group">     
+        <label for="Telephone No">Telephone No.</label>
+        <input type="text" class="form-control" id="R_Tel" [(ngModel)]="Employees.R_Tel" name="R_Tel" #R_Tel="ngModel">
+        </div>
+      </div>
+
+    </div>
+
+     <div class="row d-flex justify-content-between">
+
+       <div class="col-sm-5">
+        <div class="form-group">     
+        <label for="Permanent Address">Permanent Address</label>
+        <input type="text" class="form-control" id="P_Address" required [(ngModel)]="Employees.P_Address" name="P_Address" #P_Address="ngModel">
+        <div [hidden]="P_Address.valid || P_Address.pristine" class="alert alert-danger"> Permanent Address is required </div>
+        </div>
+
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="Zip Code">Zip Code</label>
+        <input type="text" class="form-control" id="P_ZipCode" required [(ngModel)]="Employees.P_ZipCode" name="P_ZipCode" #P_ZipCode="ngModel">
+        <div [hidden]="P_ZipCode.valid || P_ZipCode.pristine" class="alert alert-danger"> Zip Code is required </div>
+        </div>
+      </div>
+
+        <div class="col">
+        <div class="form-group">     
+        <label for="Telephone No">Telephone No.</label>
+        <input type="text" class="form-control" id="P_Tel" [(ngModel)]="Employees.P_Tel" name="P_Tel" #P_Tel="ngModel">
+        </div>
+      </div>
+
+    </div>
+
+      <div class="row d-flex justify-content-between">
+
+       <div class="col">
+          <div class="form-group">     
+          <label for="Email Address">Email Address</label>
+          <input type="email" class="form-control" id="Email" [(ngModel)]="Employees.Email" name="Email" #Email="ngModel">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-group">     
+          <label for="Cell">Cellphone No.</label>
+          <input type="text" class="form-control" id="Cell" [(ngModel)]="Employees.Cell" name="Cell" #Cell="ngModel">
+          </div>
+        </div>
+
+      <div class="col">
+        <div class="form-group">     
+        <label for="Agency Employee No.">Agency Employee No.</label>
+        <input type="text" class="form-control" id="A_Emp_ID" required [(ngModel)]="Employees.A_Emp_ID" name="A_Emp_ID" #A_Emp_ID="ngModel">
+        <div [hidden]="A_Emp_ID.valid || A_Emp_ID.pristine" class="alert alert-danger"> Agency Employee No. </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">     
+        <label for="TIN">TIN</label>
+        <input type="text" class="form-control" id="TIN" required [(ngModel)]="Employees.TIN" name="TIN" #TIN="ngModel">
+        <div [hidden]="TIN.valid || TIN.pristine" class="alert alert-danger"> TIN is required </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  <br><hr>
+  <h4>II. FAMILY BACKGROUND</h4><br>
+
+       <div class="row d-flex justify-content-between">
+
+       <div class="col">
+        <div class="form-group">     
+        <label for="Spouse's Surname">Spouse's Surname</label>
+        <input type="text" class="form-control" id="s_surname" [(ngModel)]="Employees.s_surname" name="s_surname" #s_surname="ngModel">
+        </div>
+
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="Firstname">Firstname</label>
+        <input type="text" class="form-control" id="s_firstname" [(ngModel)]="Employees.s_firstname" name="s_firstname" #s_firstname="ngModel">
+        </div>
+      </div>
+
+        <div class="col">
+        <div class="form-group">     
+        <label for="Middlename">Middlename</label>
+        <input type="text" class="form-control" id="s_middlename" [(ngModel)]="Employees.s_middlename" name="s_middlename" #s_middlename="ngModel">
+        </div>
+      </div>
+
+    </div>
+
+      <div class="row d-flex justify-content-between">
+
+       <div class="col">
+        <div class="form-group">     
+        <label for="Occupation">Occupation</label>
+        <input type="text" class="form-control" id="s_occupation" [(ngModel)]="Employees.s_occupation" name="s_occupation" #s_occupation="ngModel">
+        </div>
+
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="Employer/Bus. Name">Employer/Bus. Name</label>
+        <input type="text" class="form-control" id="s_employer" [(ngModel)]="Employees.s_employer" name="s_employer" #s_employer="ngModel">
+        </div>
+      </div>
+
+        <div class="col">
+        <div class="form-group">     
+        <label for="s_tel">Telephone No.</label>
+        <input type="text" class="form-control" id="s_tel" [(ngModel)]="Employees.s_tel" name="s_tel" #s_tel="ngModel">
+        </div>
+      </div>
+
+    </div>
+
+     <div class="row d-flex justify-content-between">
+
+       <div class="col">
+        <div class="form-group">     
+        <label for="f_surname">Father's Surname</label>
+        <input type="text" class="form-control" id="f_surname" required [(ngModel)]="Employees.f_surname" name="f_surname" #f_surname="ngModel">
+        <div [hidden]="f_surname.valid || f_surname.pristine" class="alert alert-danger"> Father's Surname is required </div>
+        </div>
+
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="f_firstname">Firstname</label>
+        <input type="text" class="form-control" id="f_firstname" required [(ngModel)]="Employees.f_firstname" name="f_firstname" #f_firstname="ngModel">
+        <div [hidden]="f_firstname.valid || f_firstname.pristine" class="alert alert-danger"> Father's Firstname is required </div>
+        </div>
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="f_middlename">Middlename</label>
+        <input type="text" class="form-control" id="f_middlename" required [(ngModel)]="Employees.f_middlename" name="f_middlename" #f_middlename="ngModel">
+        <div [hidden]="f_middlename.valid || f_middlename.pristine" class="alert alert-danger"> Father's Middlename is required </div>
+        </div>
+      </div>
+
+    </div>
+      <strong>Mother's Maiden Name</strong>
+     <div class="row d-flex justify-content-between">
+     
+       <div class="col">
+        <div class="form-group">     
+        <label for="m_surname">Mother's Surname</label>
+        <input type="text" class="form-control" id="m_surname" required [(ngModel)]="Employees.m_surname" name="m_surname" #m_surname="ngModel">
+        <div [hidden]="m_surname.valid || m_surname.pristine" class="alert alert-danger"> Mother's Surname is required </div>
+        </div>
+
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="m_firstname">Firstname</label>
+        <input type="text" class="form-control" id="m_firstname" required [(ngModel)]="Employees.m_firstname" name="m_firstname" #m_firstname="ngModel">
+        <div [hidden]="m_firstname.valid || m_firstname.pristine" class="alert alert-danger"> Mother's Firstname is required </div>
+        </div>
+      </div>
+        <div class="col">
+        <div class="form-group">     
+        <label for="m_middlename">Middlename</label>
+        <input type="text" class="form-control" id="m_middlename" required [(ngModel)]="Employees.m_middlename" name="m_middlename" #m_middlename="ngModel">
+        <div [hidden]="m_middlename.valid || m_middlename.pristine" class="alert alert-danger"> Mother's Middlename is required </div>
+        </div>
+      </div>
+
+    </div>  
+
+     <div class="row d-flex justify-content-between">
+       <div class="col">
+        <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Name of child</th>
+                  <th>Date of birth</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let child of Child; let i = index;">
+                <td>{{i+1}}</td>
+                <!--<td> <input type="text" class="form-control" id="name" required [(ngModel)]="child.name" name="name" #name="ngModel"> </td>
+                <td> <input type="date" class="form-control" id="DoB" required [(ngModel)]="child.DoB" name="DoB" #DoB="ngModel"></td>-->
+                 <td>{{child.name}}</td>
+                 <td>{{child.DoB}}</td>
+                <td>
+                  <button type="button" class="btn btn-danger btn-circle" (click)="removeChild(i)"><i class="fa fa-times"></i></button>
+                  <button type="button" class="btn btn-info btn-circle" (click)="updateChild(child)"><i class="fa fa-edit"></i></button></td>
+              </tr>
+            <tr>
+              <td></td>
+              <td><input type="text" class="form-control"  #childName placeholder="name"></td>
+              <td><input type="date" class="form-control" #childBirthday></td>
+              <td> <button type="button" class="btn btn-warning form-control"  (click)="addChild(childName.value, childBirthday.value); childName.value=''; childBirthday.value=''">Add Child</button></td>
+            </tr>
+          </tbody>
+          </table>
+          </div>
+           <div *ngIf="selectedChild" class="col">
+               <div>
+                  <label>Name: </label>
+                  <input class="form-control" [(ngModel)]="selectedChild.name" placeholder="name" name="name"/>
+                </div>
+                <div>
+                  <label>Birthday: </label>
+                  <input type="date" class="form-control" [(ngModel)]="selectedChild.DoB" placeholder="YYYY-MM-DD"  name="DoB"/>
+                </div>
+             </div>
+    </div>
+
+      <br><hr>
+  <h4>III. EDUCATIONAL BACKGROUND</h4><br>
+
+  <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>Level</th>
+          <th>Name of School</th>
+          <th>Degree Course</th>
+          <th>Year Graduated</th>
+          <th>Highest Grade/ Level/ Units Earned</th>
+          <th>Scolarship/ Academic Honors Received</th>
+          <th>From</th>
+          <th>To</th>  
+          <th>Action</th>
+
+           
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let educ of Education; let i = index;">
+       <td>{{educ.Level}}</td>
+       <td>{{educ.School_Name}}</td>
+       <td>{{educ.Degree}}</td>
+       <td>{{educ.Year_Grad}}</td>
+       <td>{{educ.Highest_GLUE}}</td>
+        <td>{{educ.SAHR}}</td>
+       <td>{{educ.IDA_From}}</td>
+       <td>{{educ.IDA_To}}</td>
+     
+       <td>
+         <button type="button" class="btn btn-danger btn-circle" (click)="removeEducation(i)"><i class="fa fa-times"></i></button>
+         <button type="button" class="btn btn-info btn-circle" (click)="updateEducation(educ)"><i class="fa fa-edit"></i></button> </td>
+     </tr>
+     <tr>
+       <td><select class="form-control"  #level><option *ngFor="let l of levels" [value]="l">{{l}}</option></select></td>
+       <td><input type="text" class="form-control"  #sn placeholder="School Name"></td>
+       <td><input type="text" class="form-control"  #deg placeholder="Degree"></td>
+       <td><input type="text" class="form-control"  #yg placeholder="year graduated"></td>
+       <td><input type="text" class="form-control"  #hg placeholder="highest grade"></td>
+       <td><input type="text" class="form-control"  #s placeholder="scholarship"></td>
+       <td><input type="text" class="form-control"  #IDA_From placeholder="from"></td>
+       <td><input type="text" class="form-control"  #IDA_To placeholder="to"></td>
+       <td><button type="button" class="btn btn-warning form-control" 
+       (click)="addEducation(level.value, sn.value, deg.value, yg.value, hg.value, s.value, IDA_From.value, IDA_To.value);
+       level.value = ''; sn.value=''; deg.value=''; yg.value=''; hg.value=''; s.value=''; IDA_From.value=''; IDA_To.value='';">Add</button></td>
+     </tr>
+  </tbody>			        
+		</table>
+     <div *ngIf="selectedEducation">
+       <div  class="row d-flex flex-wrap">
+       <div class="col-sm-3">
+        <label>Level:</label>
+       <select class="form-control"  [(ngModel)]="selectedEducation.Level" name="Level"><option *ngFor="let l of levels" [value]="l">{{l}}</option></select>
+      </div>
+        <div class="col">
+        <label>School Name:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedEducation.School_Name" name="School_Name" >
+      </div>
+        <div class="col">
+        <label>Degree:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedEducation.Degree" name="Degree" >
+      </div>
+        <div class="col-sm-2">
+        <label>Year Graduated:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedEducation.Year_Grad" name="Year_Grad" >
+      </div>
+      </div>
+      <div  class="row d-flex flex-wrap">
+      <div class="col">
+        <label>Highest Grade/ Level/ Units Earned:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedEducation.Highest_GLUE" name="Highest_GLUE" >
+      </div>
+         <div class="col">
+        <label>Scolarship/ Academic Honors Received:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedEducation.SAHR" name="SAHR" >
+      </div>
+
+       <div class="col-sm-2">
+        <label>From:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedEducation.IDA_From" name="IDA_From" >
+      </div>
+        <div class="col-sm-2">
+        <label>To:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedEducation.IDA_To" name="IDA_To" >
+      </div>
+      </div>
+
+      </div>
+
+      <br><hr>
+  <h4>IV. Civil Service Eligibility</h4><br>
+
+  	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>Career Service/ RA 1080 (Board/ BAR) Under Special Laws/ CES/ CSEE</th>
+          <th>Rating</th>
+          <th>Date of Examination/ Conferment</th>
+          <th>Place of Examination/ Conferment</th>
+          <th>License Number</th>
+          <th>Date of Release</th>
+          <th>Action</th>        
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let cse of CSE; let i = index;">
+       <td>{{cse.CS}}</td>
+       <td>{{cse.Rating}}</td>
+       <td>{{cse.DoEC}}</td>
+       <td>{{cse.poEC}}</td>
+       <td>{{cse.License_Num}}</td>
+      <td>{{cse.License_DoR}}</td>
+     
+       <td>
+         <button type="button" class="btn btn-danger btn-circle" (click)="removeCSE(i)"><i class="fa fa-times"></i></button>
+         <button type="button" class="btn btn-info btn-circle" (click)="updateCSE(cse)"><i class="fa fa-edit"></i></button>
+         </td>
+     </tr>
+     <tr>
+       <td><input type="text" class="form-control"  #cs placeholder="Career Service"></td>
+       <td><input type="text" class="form-control"  #rating placeholder="Rating"></td>
+       <td><input type="date" class="form-control"  #doe ></td>
+       <td><input type="text" class="form-control"  #poe placeholder="Place"></td>
+       <td><input type="text" class="form-control"  #ln placeholder="license"></td>
+       <td><input type="date" class="form-control"  #dor ></td>
+       <td><button type="button" class="btn btn-warning form-control" (click)="addCSE(cs.value, rating.value, doe.value, poe.value, ln.value, dor.value);
+       cs.value=''; rating.value=''; doe.value='';">Add </button></td>
+       
+       
+     </tr>
+  </tbody>			        
+		 </table>
+
+      <div *ngIf="selectedCSE" class="row d-flex flex-wrap">
+       <div class="col">
+        <label>Career Service:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedCSE.CS" name="CS" >
+      </div>
+        <div class="col">
+        <label>Rating</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedCSE.Rating" name="Rating" >
+      </div>
+        <div class="col">
+        <label>Date of Examination:</label>
+       <input type="date" class="form-control" [(ngModel)]="selectedCSE.DoEC" name="DoEC" >
+      </div>
+        <div class="col">
+        <label>Place of Examination:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedCSE.poEC" name="poEC" >
+      </div>
+        <div class="col">
+        <label>License Number:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedCSE.License_Num" name="License_Num" >
+      </div>
+        <div class="col">
+        <label>Date of Release:</label>
+       <input type="date" class="form-control" [(ngModel)]="selectedCSE.License_DoR" name="License_DoR" >
+      </div>
+      </div>
+
+  <br><hr>
+  <h4>V. Work Experience</h4><br>
+	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>From</th>
+          <th>To</th>
+          <th>Position Title</th>
+          <th>Department/ Agency/ Office/ Company</th>
+          <th>Monthly Salary</th>
+          <th>Salary Grade & Step Incriment</th>
+          <th>Status of Appointment</th>
+          <th>Government Service</th>
+          <th>Action</th>        
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let work of WE; let i = index;">
+       <td>{{work._from}}</td>
+       <td>{{work._to}}</td>
+       <td>{{work.position}}</td>
+       <td>{{work.office}}</td>
+      <td>{{work.salary}}</td>
+       <td>{{work.sg}}</td>
+      <td>{{work.status}}</td>
+      <td>{{work.gov_service}}</td>
+     
+       <td>
+         <button type="button" class="btn btn-danger btn-circle" (click)="removeWE(i)"><i class="fa fa-times"></i></button>
+         <button type="button" class="btn btn-info btn-circle" (click)="updateWE(work)"><i class="fa fa-edit"></i></button></td>
+     </tr>
+     <tr>
+       <td><input type="text" class="form-control"  #_from placeholder="from"></td>
+       <td><input type="text" class="form-control"  #_to placeholder="to"></td>
+       <td><input type="text" class="form-control"  #position placeholder="position"></td>
+       <td><input type="text" class="form-control"  #office placeholder="office"></td>
+       <td><input type="text" class="form-control"  #salary placeholder="monthly salary"></td>
+       <td><input type="text" class="form-control"  #sg placeholder="salary grade"></td>
+       <td><select class="form-control"  #status><option *ngFor="let s of statuss" [value]="s">{{s}}</option></select></td>
+       <td><select class="form-control"  #gov_service><option *ngFor="let q of questions" [value]="q">{{q}}</option></select></td>
+      <td><button type="button" class="btn btn-warning form-control" (click)="addWE(_from.value, _to.value, position.value, office.value, salary.value, sg.value, status.value, gov_service.value);
+       _from.value=''; _to.value=''; position.value=''; salary.value=''; office.value=''; sg.value=''; status.value=''; gov_service.value='';">Add </button></td>
+     </tr>
+  </tbody>			        
+		 </table>
+
+      <div *ngIf="selectedWE">
+        <div class="row d-flex flex-wrap">
+       <div class="col">
+        <label>From:</label>
+       <input type="date" class="form-control" [(ngModel)]="selectedWE._from" name="_from" >
+      </div>
+        <div class="col">
+        <label>To:</label>
+       <input type="date" class="form-control" [(ngModel)]="selectedWE._to" name="_to" >
+      </div>
+        <div class="col">
+        <label>Position Title:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedWE.position" name="position" >
+      </div>
+        <div class="col">
+        <label>Department/ Agency/ Office/ Company:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedWE.office" name="office" >
+      </div>
+        </div>
+
+        <div class="row d-flex flex-wrap">
+        <div class="col">
+        <label>Monthly Salary:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedWE.salary" name="salary" >
+      </div>
+        <div class="col">
+        <label>Salary Grade & Step Incriment:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedWE.sg" name="sg" >
+      </div>
+        <div class="col">
+        <label>Status of Appointment:</label>
+       <select class="form-control"  [(ngModel)]="selectedWE.status" name="status"><option *ngFor="let s of statuss" [value]="s">{{s}}</option></select>
+      </div>
+        <div class="col">
+        <label>Government Service:</label>
+       <select class="form-control"  [(ngModel)]="selectedWE.gov_service" name="gov_service"><option *ngFor="let s of questions" [value]="s">{{s}}</option></select>
+      </div>
+      </div>
+
+      </div>
+
+      <br><hr>
+  <h4>VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC / NON-GOVERNMENT / PEOPLE / VOLUNTARY ORGANIZATION/S</h4><br>
+  <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>Name & Address of Organization</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Number of Hours</th>
+          <th>Position / Nature of Work</th>
+          <th>Action</th>        
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let vol of VWI; let i = index;">
+       <td>{{vol.Org_Name}}</td>
+       <td>{{vol.IDA_From}}</td>
+       <td>{{vol.IDA_To}}</td>
+       <td>{{vol.Hours}}</td>
+       <td>{{vol.PosNoW}}</td>
+     
+       <td>
+         <button type="button" class="btn btn-danger btn-circle" (click)="removeVWI(i)"><i class="fa fa-times"></i></button>
+         <button type="button" class="btn btn-info btn-circle" (click)="updateVWI(vol)"><i class="fa fa-edit"></i></button></td>
+     </tr>
+     <tr>
+       <td><input type="text" class="form-control"  #Org_Name placeholder="Org name"></td>
+       <td><input type="date" class="form-control"  #IDA_From placeholder="from"></td>
+       <td><input type="date" class="form-control"  #IDA_To placeholder="to"></td>
+       <td><input type="text" class="form-control"  #Hours placeholder="hours"></td>
+       <td><input type="text" class="form-control"  #PosNoW placeholder="position"></td>
+       <td><button type="button" class="btn btn-warning form-control" (click)="addVWI(Org_Name.value, IDA_From.value, IDA_To.value, Hours.value, PosNoW.value);
+       Org_Name.value=''; IDA_From.value=''; IDA_To.value=''; Hours.value=''; PosNoW.value='';">Add </button></td>
+     </tr>
+  </tbody>			        
+		 </table>
+      <div *ngIf="selectedVW" class="row d-flex flex-wrap">
+       <div class="col">
+        <label>Name & Address of Organization:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedVW.Org_Name" name="Org_Name" >
+      </div>
+        <div class="col">
+        <label>From</label>
+       <input type="date" class="form-control" [(ngModel)]="selectedVW.IDA_From" name="IDA_From" >
+      </div>
+        <div class="col">
+        <label>To:</label>
+       <input type="date" class="form-control" [(ngModel)]="selectedVW.IDA_To" name="IDA_To" >
+      </div>
+        <div class="col">
+        <label>Number of Hours:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedVW.Hours" name="Hours" >
+      </div>
+        <div class="col">
+        <label>Position / Nature of Work:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedVW.PosNoW" name="PosNoW" >
+      </div>
+      </div>
+
+
+  <br><hr>
+  <h4>VII. TRAINING PROGRAMS (Start from the most recent training.)</h4><br>
+  	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>Title of Seminar/ Conference/ Workshop/ Short Courses</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Number of Hours</th>
+          <th>Conducted/ Sponsored By</th>
+          <th>Action</th>        
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let train of TP; let i = index;">
+       <td>{{train.Title}}</td>
+       <td>{{train.IDA_From}}</td>
+       <td>{{train.IDA_To}}</td>
+       <td>{{train.Hours}}</td>
+       <td>{{train.Conducted_By}}</td>
+     
+       <td>
+         <button type="button" class="btn btn-danger btn-circle" (click)="removeTP(i)"><i class="fa fa-times"></i></button>
+         <button type="button" class="btn btn-info btn-circle" (click)="updateTP(train)"><i class="fa fa-edit"></i></button></td>
+     </tr>
+     <tr>
+        <td><input type="text" class="form-control"  #Title placeholder="Title"></td>
+       <td><input type="date" class="form-control"  #IDA_From placeholder="from"></td>
+       <td><input type="date" class="form-control"  #IDA_To placeholder="to"></td>
+       <td><input type="text" class="form-control"  #Hours placeholder="hours"></td>
+       <td><input type="text" class="form-control"  #Conducted_By placeholder="conducted by"></td>
+       <td><button type="button" class="btn btn-warning form-control" (click)="addTP(Title.value, IDA_From.value, IDA_To.value, Hours.value, Conducted_By.value);
+       Title.value=''; IDA_From.value=''; IDA_To.value=''; Hours.value=''; Conducted_By.value='';">Add </button></td>
+     </tr>
+  </tbody>			        
+		 </table>
+      <div *ngIf="selectedTP" class="row d-flex flex-wrap">
+       <div class="col">
+        <label>Title of Seminar/ Conference/ Workshop/ Short Courses:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedTP.Title" name="Title" >
+      </div>
+        <div class="col">
+        <label>From</label>
+       <input type="date" class="form-control" [(ngModel)]="selectedTP.IDA_From" name="IDA_From" >
+      </div>
+        <div class="col">
+        <label>To:</label>
+       <input type="date" class="form-control" [(ngModel)]="selectedTP.IDA_To" name="IDA_To" >
+      </div>
+        <div class="col">
+        <label>Number of Hours:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedTP.Hours" name="Hours" >
+      </div>
+        <div class="col">
+        <label>Conducted/ Sponsored By:</label>
+       <input type="text" class="form-control" [(ngModel)]="selectedTP.Conducted_By" name="Conducted_By" >
+      </div>
+      </div>
+
+
+    <br><hr>
+  <h4>VIII. OTHER INFORMATION</h4><br>
+<div class="row">
+  <div class="col"><h6>Special Skills/ Hobbies</h6></div>
+  <div class="col"><h6>Non-Academic Distinction/ Recognition</h6></div>
+  <div class="col"><h6>Membership in Association/ Organization</h6></div>
+
+</div><br>
+
+ <div class="row">
+  <div class ="col">
+    <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12">
+      <tr *ngFor="let skill of Skills; let i = index;">
+        <td> {{skill.sp_name}} </td>
+        <td> <button type="button" class="btn btn-danger btn-circle" (click)="removeSkills(i)"><i class="fa fa-times"></i></button> </td>
+      </tr>
+      <tr>
+        <td><input type="text" class="form-control"  #sname placeholder="Name"></td>
+        <td><button type="button" class="btn btn-warning form-control" (click)="addSkills(sname.value); sname.value='';">Add </button></td>
+      </tr>
+    </table>
+  </div>
+  <div class ="col">
+    <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12">
+      <tr *ngFor="let na of NA; let i = index;">
+        <td> {{na.na_name}} </td>
+        <td> <button type="button" class="btn btn-danger btn-circle" (click)="removeNA(i)"><i class="fa fa-times"></i></button> </td>
+      </tr>
+      <tr>
+        <td><input type="text" class="form-control"  #nname placeholder="Name"></td>
+        <td><button type="button" class="btn btn-warning form-control" (click)="addNA(nname.value); nname.value='';">Add </button></td>
+      </tr>
+    </table>    
+  </div>
+  <div class ="col">
+      <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12">
+      <tr *ngFor="let mem of Membership; let i = index;">
+        <td> {{mem.m_name}} </td>
+        <td> <button type="button" class="btn btn-danger btn-circle" (click)="removeMembership(i)"><i class="fa fa-times"></i></button> </td>
+      </tr>
+      <tr>
+        <td><input type="text" class="form-control"  #m_name placeholder="Name"></td>
+        <td><button type="button" class="btn btn-warning form-control" (click)="addMembership(m_name.value); m_name.value='';">Add </button></td>
+      </tr>
+    </table>
+    
+  </div>
+</div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="!PDSForm.form.valid">Submit</button> 
+</form>
+
+
+
+
+</div>

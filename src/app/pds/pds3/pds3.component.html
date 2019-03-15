@@ -1,0 +1,161 @@
+<br>
+  <h4>VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC / NON-GOVERNMENT / PEOPLE / VOLUNTARY ORGANIZATION/S</h4><br>
+<div class="container">
+  <form #pdsForm3="ngForm" (ngSubmit)="onSubmit(pdsForm3)">
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="name">name</label>
+  <input  name="name" [(ngModel)]="newVol.name" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="Name & Address of Organization">
+
+  <label class="ol-sm-1" for="Inclusive Dates">Inclusive Dates</label>
+  <input name="Rating" [(ngModel)]="newVol.from" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-1" id="" placeholder="From">
+
+  <label class="sr-only" for="to">to</label>
+  <input name="to" [(ngModel)]="newVol.to" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-1" id="" placeholder="To">
+</div>
+<br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Hours">Hours</label>
+  <input  name="Hours" [(ngModel)]="newVol.hours" type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Number of Hours">
+
+  <label class="sr-only" for="position">position</label>
+  <input name="position" [(ngModel)]="newVol.position" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-5" id="" placeholder="Position / Nature of Work">
+
+   <button type="button" class="btn btn-success btn-circle" (click)="addVol()">Submit</button>
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>Name & Address of Organization</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Number of Hours</th>
+          <th>Position / Nature of Work</th>
+          <th>Action</th>        
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let vol of voluntaries; let i = index;">
+       <td>{{vol.name}}</td>
+       <td>{{vol.from}}</td>
+       <td>{{vol.to}}</td>
+       <td>{{vol.hours}}</td>
+       <td>{{vol.position}}</td>
+     
+       <td><button type="button" class="btn btn-danger btn-circle" (click)="removeVol(i)"><i class="fa fa-times"></i></button></td>
+     </tr>
+  </tbody>			        
+		 </table>
+  
+</div>
+<br><hr>
+<h4>VII. TRAINING PROGRAMS (Start from the most recent training.)</h4><br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="title">title</label>
+  <input  name="title" [(ngModel)]="newTrain.title" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="Title of Seminar/ Conference/ Workshop/ Short Courses">
+
+  <label class="ol-sm-1" for="Inclusive Dates">Inclusive Dates</label>
+  <input name="Rating" [(ngModel)]="newTrain.from" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-1" id="" placeholder="From">
+
+  <label class="sr-only" for="to">to</label>
+  <input name="to" [(ngModel)]="newTrain.to" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-1" id="" placeholder="To">
+</div>
+<br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Hours">Hours</label>
+  <input  name="Hours" [(ngModel)]="newTrain.hours" type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Number of Hours">
+
+  <label class="sr-only" for="conducted">conducted</label>
+  <input name="conducted" [(ngModel)]="newTrain.conducted" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-5" id="" placeholder="Conducted/ Sponsored By">
+
+   <button type="button" class="btn btn-success btn-circle" (click)="addTrain()">Submit</button>
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>Title of Seminar/ Conference/ Workshop/ Short Courses</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Number of Hours</th>
+          <th>Conducted/ Sponsored By</th>
+          <th>Action</th>        
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let train of trainings; let i = index;">
+       <td>{{train.title}}</td>
+       <td>{{train.from}}</td>
+       <td>{{train.to}}</td>
+       <td>{{train.hours}}</td>
+       <td>{{train.conducted}}</td>
+     
+       <td><button type="button" class="btn btn-danger btn-circle" (click)="removeTrain(i)"><i class="fa fa-times"></i></button></td>
+     </tr>
+  </tbody>			        
+		 </table>
+  
+</div>
+<br><hr>
+<h4>VIII. OTHER INFORMATION</h4><br>
+<div><i>Type and press enter to submit</i></div><br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="skills">skills</label>
+  <input name="skill" [(ngModel)]="skill"
+      (keyup.enter)="addSkills()"
+      type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-4" id="" placeholder="Special Skills/ Hobbies">
+ 
+  <label class="sr-only" for="NA">NA</label>
+  <input name="NA" [(ngModel)]="NA" 
+    (keyup.enter)="addNA()"
+    type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-4" id="" placeholder="Non-Academic Distinction/ Recognition">
+
+  <label class="sr-only" for="mem">mem</label>
+  <input name="mem" [(ngModel)]="mem" 
+    (keyup.enter)="addMembership()"
+    type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Membership in Association/ Organization">
+</div>
+<br>
+<div class="row">
+  <div class ="col-sm-4">
+    <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12">
+      <tr *ngFor="let skill of skills; let i = index;">
+        <td> {{skill}} </td>
+        <td> <button type="button" class="btn btn-danger btn-circle" (click)="removeSkills(i)"><i class="fa fa-times"></i></button> </td>
+      </tr>
+    </table>
+  </div>
+  <div class ="col-sm-4">
+    <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12">
+      <tr *ngFor="let na of nonacademic; let i = index;">
+        <td> {{na}} </td>
+        <td> <button type="button" class="btn btn-danger btn-circle" (click)="removeNA(i)"><i class="fa fa-times"></i></button> </td>
+      </tr>
+    </table>    
+  </div>
+  <div class ="col-sm-4">
+      <table class="table table-striped table-bordered table-condensed table-responsive col-sm-12">
+      <tr *ngFor="let mem of membership; let i = index;">
+        <td> {{mem}} </td>
+        <td> <button type="button" class="btn btn-danger btn-circle" (click)="removeMembership(i)"><i class="fa fa-times"></i></button> </td>
+      </tr>
+    </table>
+    
+  </div>
+</div>
+<br>
+<div class="d-flex justify-content-end">
+   <button type="button" class="btn btn-primary pull-right" (click)="onSubmit(pdsForm3);$event.preventDefault()" >Proceed</button>
+  </div>
+</form>
+
+</div>

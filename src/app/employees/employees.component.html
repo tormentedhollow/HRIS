@@ -1,0 +1,51 @@
+<br>
+<h4>List of DA RFU-13 Employees</h4>
+<div class="d-flex justify-content-end">
+  <div class="mr-auto p-2"><button type="button" (click)="refresh()" class="btn btn-outline-success" ><i class="fa fa-refresh" aria-hidden="true">Refresh</i></button></div>
+  <div class="p-2">
+      <input class="form-control" type="text" [(ngModel)]="objectsWithGettersFilter.Sname" placeholder="Search surname here..."> 
+  </div>
+</div>
+    
+<div class="table-responsive">
+<table class="table table-striped" [mfData]="Employees | filterBy: objectsWithGettersFilter" #mf="mfDataTable" [mfRowsOnPage]="10">
+    <thead>
+    <tr>
+        <th>Photo</th>
+        <th>Surname</th>
+        <th>Firstname</th>
+        <th>Middlename</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let item of mf.data">
+        <td><img *ngIf="item.Photo" src="assets/photo/{{item.Photo}}" alt="" class="rounded" width="50" height= "50">
+        <img *ngIf="!item.Photo" src="assets/photo/no.gif" alt="" class="rounded" width="50" height= "50"></td>
+        <td>{{item.Sname | uppercase}}</td>
+        <td>{{item.Fname | uppercase}}</td>
+        <td>{{item.Mname | uppercase}}</td>
+        <td>{{item.DoB | amTimeAgo:true }} old</td>
+        <td>{{item.R_Address | uppercase}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-primary" (click)="viewEmployee(item)">View</button>
+            <button type="button" class="btn btn-outline-success" (click)="updateEmployee(item)">Update</button>
+            <button type="button" class="btn btn-outline-info" (click)="open(item)">Upload</button>
+        </td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="6" >
+           <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+</div>
+<template ngbModalContainer></template> 
+        

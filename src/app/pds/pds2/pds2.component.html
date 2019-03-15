@@ -1,0 +1,155 @@
+<br>
+  <h4>IV. Civil Service Eligibility {{masterName}}</h4><br>
+<div class="container">
+  <form #pdsForm2="ngForm" (ngSubmit)="onSubmit(pdsForm2)">
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Surname">CareerService</label>
+  <input  name="CareerService" [(ngModel)]="newCSE.cs" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-9" id="" placeholder="Career Service/ RA 1080 (Board/ BAR) Under Special Laws/ CES/ CSEE">
+
+  <label class="sr-only" for="Rating">Rating</label>
+  <input name="Rating" [(ngModel)]="newCSE.rating" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="Rating">
+
+</div>
+<br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="col-sm-1" for="DateOfExam">Date of Examination</label>
+  <input  name="DateOfExam" [(ngModel)]="newCSE.doe" type="date" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="DateOfExam">
+
+  <label class="sr-only" for="PlaceOfExam">PlaceOfExam</label>
+  <input name="PlaceOfExam" [(ngModel)]="newCSE.poe" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-5" id="" placeholder="Place of Examination/Conferment">
+
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="LicenseNumber">LicenseNumber</label>
+  <input name="LicenseNumber" [(ngModel)]="newCSE.ln" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-5" id="" placeholder="License Number">
+
+  <label class="col-sm-1" for="DateOfRelease">Date of Release</label>
+  <input  name="DateOfRelease" [(ngModel)]="newCSE.dor" type="date" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="DateOfRelease">
+
+  <button type="button" class="btn btn-success btn-circle" (click)="addCSE()">Submit</button>
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>Career Service/ RA 1080 (Board/ BAR) Under Special Laws/ CES/ CSEE</th>
+          <th>Rating</th>
+          <th>Date of Examination/ Conferment</th>
+          <th>Place of Examination/ Conferment</th>
+          <th>License Number</th>
+          <th>Date of Release</th>
+          <th>Action</th>        
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let cse of CSEs; let i = index;">
+       <td>{{cse.cs}}</td>
+       <td>{{cse.rating}}</td>
+       <td>{{cse.doe}}</td>
+       <td>{{cse.poe}}</td>
+       <td>{{cse.ln}}</td>
+      <td>{{cse.dor}}</td>
+     
+       <td><button type="button" class="btn btn-danger btn-circle" (click)="removeCSE(i)"><i class="fa fa-times"></i></button></td>
+     </tr>
+  </tbody>			        
+		 </table>
+  
+</div>
+<br><hr>
+<h4>V. Work Experience (Include private employment. Start from your current work.)</h4><br>
+<div class="form-inline d-flex justify-content-between">
+
+ <label class="col-sm-1" for="from">Inclusive dates</label>
+  <input [(ngModel)]="newWE.from" name="from" type="date" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="From">
+
+  <label class="sr-only" for="to">To</label>
+  <input [(ngModel)]="newWE.to" name="to" type="date" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="To">
+
+  <label class="sr-only" for="sg">Position</label>
+  <input [(ngModel)]="newWE.position" name="position" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Position Title">
+
+  
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+
+ <label class="sr-only" for="from">office</label>
+  <input [(ngModel)]="newWE.office" name="from" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-6" id="" placeholder="Department/ Agency/ Office/ Company">
+
+  <label class="sr-only" for="Salary">Salary</label>
+  <input [(ngModel)]="newWE.salary" name="salary" type="number" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Monthly Salary">
+
+  <label class="sr-only" for="sg">sg</label>
+  <input [(ngModel)]="newWE.sg" name="sg" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="Salary Grade & Step Incriment">
+
+  
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="col-sm-1" for="status">Status of Appointment</label>
+ <select [(ngModel)]="newWE.status" name="from" class="form-control mb-2 mr-sm-2 mb-sm-0" id="">
+      <option value="Contractual">Contractual</option>
+      <option value="Permanent">Permanent</option>
+      <option value="Temporary">Temporary</option>
+      <option value="Job Order">Job Order</option>
+  </select>
+
+  <label class="col-sm-1" for="gs">Government Service</label>
+ <select [(ngModel)]="newWE.gs" name="gs" class="form-control mb-2 mr-sm-2 mb-sm-0" id="">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+
+ <button type="button" class="btn btn-success btn-circle" (click)="addWE()">Submit</button>
+  
+</div>
+<br>
+<div class="form-inline d-flex justify-content-between">
+	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>From</th>
+          <th>To</th>
+          <th>Position Title</th>
+          <th>Department/ Agency/ Office/ Company</th>
+          <th>Salary Grade & Step Incriment</th>
+          <th>Status of Appointment</th>
+          <th>Government Service</th>
+          <th>Action</th>        
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let work of WEs; let i = index;">
+       <td>{{work.from}}</td>
+       <td>{{work.to}}</td>
+       <td>{{work.position}}</td>
+       <td>{{work.office}}</td>
+       <td>{{work.sg}}</td>
+      <td>{{work.status}}</td>
+      <td>{{work.gs}}</td>
+     
+       <td><button type="button" class="btn btn-danger btn-circle" (click)="removeWE(i)"><i class="fa fa-times"></i></button></td>
+     </tr>
+  </tbody>			        
+		 </table>
+  
+</div>
+<br>
+<div class="d-flex justify-content-end">
+   <button type="submit" class="btn btn-primary pull-right" >Proceed</button>
+  </div>
+
+</form>
+
+</div>

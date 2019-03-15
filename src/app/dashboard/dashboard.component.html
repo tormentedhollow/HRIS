@@ -1,0 +1,119 @@
+<br>
+<h4>Human Resource Dashboard</h4>
+<template ngbModalContainer></template>
+<app-flexi-list></app-flexi-list>
+<div class="row">
+<div class="col-md-4">
+  <div class="card">
+     <div class="card-header alert-info text-center">
+    <h5> <i class="fa fa-venus-mars" aria-hidden="true"> Distribution by Gender</i> </h5>
+  </div>
+  <div style="display: block" >
+  <canvas height="300" baseChart
+              [data]="gender[0].data"
+              [labels]="gender[0].labels"
+              [chartType]="gender[0].type"
+              [options]="gender[0].options"
+></canvas>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+  <div class="card" *ngIf="maritalstatus.data">
+     <div class="card-header alert-warning text-center">
+    <h5> <i class="	fa fa-user-circle-o" aria-hidden="true"> Distribution by Marital Status</i></h5>
+  </div>
+  <div style="display: block">
+  <canvas height="300" baseChart
+            [datasets]="maritalstatus.data"
+            [labels]="maritalstatus.labels"
+            [options]="maritalstatus.options"
+            [chartType]="maritalstatus.type"
+            [colors]="colors"
+></canvas>
+</div>
+</div>
+
+</div>
+
+<div class="col-md-4">
+  <div class="card" *ngIf="agebracket!=undefined">
+     <div class="card-header alert-danger text-center">
+    <h5> <i class="	fa fa-child" aria-hidden="true"> Distribution by Age Bracket</i></h5>
+  </div>
+  <div style="display: block">
+  <canvas height="300" baseChart
+            [datasets]="agebracket.data.datasets"
+            [labels]="agebracket.data.labels"
+            [options]="agebracket.options"
+            [chartType]="agebracket.type"
+></canvas>
+</div>
+</div>
+</div>
+
+<div class="container">
+  <br>
+</div>
+<div class="col-md-4">
+  <div class="card">
+  <div class="card-header alert-success text-center" *ngIf="birthday">
+   <h5> <i class="fa fa-birthday-cake" aria-hidden="true"> {{months[mo-1]}} Birthdays</i></h5>
+  </div>
+  <div class="card-block">
+    <table class="table table-bordered table-sm table-responsive" height="300">
+  <thead>
+    <tr class="table-success">
+      <th>#</th>
+      <th>Name</th>
+       <th>Birthday</th>
+      <th>Age</th>
+     
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of birthday; let i = index">
+    <tr [style.background-color]="getStyleBday(item.dob)">
+      <th scope="row">{{i+1}}</th>
+      <td>{{item.sname}}, {{item.fname}}</td>
+      <td>{{item.dob|date:'MMM d'}}</td>
+      <td>{{getAge(item.dob)}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+  </div>
+</div>
+</div>
+
+<div class="col-md-4">
+  <div class="card" *ngIf="salarygrade!=undefined">
+     <div class="card-header text-center">
+    <h5> <i class="	fa fa-angle-double-up" aria-hidden="true"> Distribution by Salary Grade</i></h5>
+  </div>
+  <div style="display: block">
+    <canvas height="300" baseChart
+              [data]="salarygrade.data"
+              [labels]="salarygrade.labels"
+              [options]="salarygrade.options"
+              [chartType]="salarygrade.type"
+    ></canvas>
+  </div>
+</div>
+</div>
+
+<div class="col-md-4">
+  <div class="card" *ngIf="stepincrement!=undefined">
+     <div class="card-header alert-info text-center">
+    <h5> <i class="	fa fa-angle-double-up" aria-hidden="true"> Distribution by Step Increment</i></h5>
+  </div>
+  <div style="display: block">
+    <canvas height="300" baseChart
+              [data]="stepincrement.data"
+              [labels]="stepincrement.labels"
+              [options]="stepincrement.options"
+              [chartType]="stepincrement.type"
+    ></canvas>
+  </div>
+</div>
+</div>
+

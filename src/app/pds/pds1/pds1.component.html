@@ -1,0 +1,330 @@
+<br>
+<h4>I. PERSONAL INFORMATION</h4><br>
+<div class="container">
+
+<form #pdsForm="ngForm" (ngSubmit)="onSubmit(pdsForm)">
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Surname">Surname</label>
+  <input  name="surname" ngModel required #surname="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Surname">
+
+
+  <label class="sr-only" for="Firstname">Firstname</label>
+  <input name="first" ngModel required #first="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Firstname">
+
+  <label class="sr-only" for="Middlename">Middlename</label>
+  <input name="middle" ngModel required #middle="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Middlename">
+
+<label class="" for="Extension">Extension</label>
+ <select name="ext" ngModel #ext="ngModel" class="form-control col-sm-1" id="">
+      <option>Jr.</option>
+      <option>Sr.</option>
+      <option>III</option>
+      <option>IV</option>
+    </select>
+
+</div>
+
+<br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label for="Birthday" class="col-sm-1">Birthday</label>
+  <input name="bday" ngModel required #bday="ngModel" type="date" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Birthday">
+
+  <label class="sr-only" for="Placeofbirth">Placeofbirth</label>
+  <input name="pob" ngModel required #pob="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-4" id=""  placeholder="Place of birth">
+
+  <label class="" for="Sex">Sex</label>
+ <select name="sex" ngModel required #sex="ngModel" class="form-control mb-2 mr-sm-2 mb-sm-0" id="">
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+
+<label class="" for="CivilStatus">CivilStatus</label>
+ <select name="cs" ngModel required #cs="ngModel" class="form-control mb-2 mr-sm-2 mb-sm-0" id="">
+      <option>Single</option>
+      <option>Married</option>
+      <option>Annulled</option>
+      <option>Widowed</option>
+      <option>Separated</option>
+      <option>Others</option>
+    </select>
+</div>
+<br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="" for="Citizenship">Citizenship</label>
+ <select name="citizenship" ngModel required #citizenship="ngModel" class="form-control mb-2 mr-sm-2 mb-sm-0" id="">
+      <option>Filipino</option>
+      <option>Others</option>
+    </select>
+
+  <label for="Height" class="">Height</label>
+  <input name="height" ngModel required #height="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-1" id="" placeholder="m">
+
+  <label  for="Weight" class="">Weight</label>
+  <input name="weight" ngModel required #weight="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-1" id="" placeholder="kg">
+
+
+  <label class="sr-only" for="Bloodtype">Bloodtype</label>
+  <input name="bloodtype" ngModel  #bloodtype="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="Bloodtype">
+
+</div>
+<br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="GSIS ID NO.">GSIS ID NO.</label>
+  <input name="gsis" ngModel  #gsis="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="GSIS ID NO.">
+
+  <label class="sr-only" for="PAG-IBIG ID NO.">PAG-IBIG ID NO.</label>
+  <input name="pagibig" ngModel  #pagibig="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="PAG-IBIG ID NO.">
+
+  <label class="sr-only" for="SSS NO.">SSS NO.</label>
+  <input name="sss" ngModel  #sss="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="SSS NO.">
+
+  <label class="sr-only" for="PHILHEALTH NO.">PHILHEALTH NO.</label>
+  <input name="phno" ngModel  #phno="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="PHILHEALTH NO.">
+
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Residential Address.">Residential Address</label>
+  <input name="address" ngModel required #address="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-6" id="" placeholder="Residential Address">
+  
+  <label class="sr-only" for="Zip Code">Zip Code</label>
+  <input name="zipcode" ngModel required #zipcode="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="Zip Code">
+  
+  <label class="sr-only" for="Telephone No.">Telephone No.</label>
+  <input name="telno" ngModel  #telno="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Telephone No.">
+  
+</div>
+<br>
+
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Permanent Address">Permanent Address</label>
+  <input name="address2" ngModel required #address2="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-6" id="" placeholder="Permanent Address">
+  
+  <label class="sr-only" for="Zip Code">Zip Code</label>
+  <input name="zipcode2" ngModel required #zipcode2="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="Zip Code">
+  
+  <label class="sr-only" for="Telephone No.">Telephone No.</label>
+  <input name="telno2" ngModel  #telno2="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Telephone No.">
+  
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Email Address">Email Address</label>
+  <input name="email" ngModel  #email="ngModel" type="email" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Email Address">
+  
+  <label class="sr-only" for="Cellphone No.">Cellphone No.</label>
+  <input name="cellno" ngModel  #cellno="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Cellphone No.">
+  
+  <label class="sr-only" for="Agency Employee No.">Agency Employee No.</label>
+  <input name="empno" ngModel  #empno="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="Agency Employee No.">
+  
+  <label class="sr-only" for="TIN">TIN</label>
+  <input name="tin" ngModel  #tin="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="" placeholder="TIN">
+  
+</div>
+<br><hr>
+
+  <h4>II. FAMILY BACKGROUND</h4><br>
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Surname">Spouse's Surname</label>
+  <input name="spouseSurname" ngModel  #spouseSurname="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Spouse's Surname">
+
+  <label class="sr-only" for="Firstname">Firstname</label>
+  <input name="spouseFirst" ngModel  #spouseFirst="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Firstname">
+
+  <label class="sr-only" for="Middlename">Middlename</label>
+  <input name="spouseMiddle" ngModel  #spouseMiddle="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Middlename">
+  
+</div>
+<br>
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Occupation">Occupation</label>
+  <input name="spouseOccupation" ngModel  #spouseOccupation="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Occupation">
+
+  <label class="sr-only" for="Employer/Bus. Name">Employer/Bus. Name</label>
+  <input name="spouseEmployer" ngModel  #spouseEmployer="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Employer/Bus. Name">
+
+  <label class="sr-only" for="Telephone No.">Telephone No.</label>
+  <input name="spouseTel" ngModel  #spouseTel="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Telephone No.">
+  
+</div>
+
+<br>
+<div class="form-inline d-flex justify-content-between">
+     <label class="sr-only" for="Name of child">Name of child</label>
+  <input [(ngModel)]="newChild.name" name="name" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-5" id="" placeholder="Name of child">
+
+
+     <label class="" for="Date of birth">Date of birth</label>
+  <input [(ngModel)]="newChild.bday2" name="bday2" type="date" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Date of birth" >
+
+ <button type="button" class="btn btn-success"  (click)="addChild()">Submit</button>
+  
+</div>
+
+<br>
+<div class="form-inline d-flex justify-content-between">
+	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+				                            <thead>
+				                                <tr>
+				                                    <th>#</th>
+				                                    <th>Name of child</th>
+				                                    <th>Date of birth</th>
+				                                    <th>Action</th>
+				                                </tr>
+				                            </thead>
+				                            <tbody>
+                                      <tr *ngFor="let child of children; let i = index;">
+                                        <td>{{i+1}}</td>
+                                         <td>{{child.name}}</td>
+                                          <td>{{child.bday2}}</td>
+<td><button type="button" class="btn btn-danger btn-circle" (click)="removeChild(i)"><i class="fa fa-times"></i></button></td>
+                                        </tr>
+				                            </tbody>
+		 </table>
+  
+</div>
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Father's Surname">Father's Surname</label>
+  <input name="FatherSurname" ngModel  required #FatherSurname="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Father's Surname">
+  
+  <label class="sr-only" for="First name">First name</label>
+  <input name="FatherFirst" ngModel  required #FatherFirst="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="First name">
+  
+  <label class="sr-only" for="Middle name">Middle name</label>
+  <input name="FatherMiddle" ngModel  required #FatherMiddle="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Middle name">
+
+</div>
+ <br> <h5>Mother's Maiden Name </h5> 
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Surname">Surname</label>
+  <input name="MotherSurname" ngModel  required #MotherSurname="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Surname">
+  
+  <label class="sr-only" for="First name">First name</label>
+  <input name="MotherFirst" ngModel  required #MotherFirst="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="First name">
+  
+  <label class="sr-only" for="Middle name">Middle name</label>
+  <input name="MotherMiddle" ngModel  required #MotherMiddle="ngModel" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-3" id="" placeholder="Middle name">
+</div>
+
+    <br><hr>
+  <h4>III. EDUCATIONAL BACKGROUND</h4><br>
+<div class="form-inline d-flex justify-content-between">
+    <label  for="Level">Level</label>
+    <select [(ngModel)]="newEduc.level" name="level" class="form-control mb-2 mr-sm-2 mb-sm-0" id="">
+      <option value="Elementary">Elementary</option>
+      <option value="Secondary">Secondary</option>
+      <option value="Vocational / Trade Course">Vocational / Trade Course</option>
+      <option value="College">College</option>
+      <option value="Graduate Studies">Graduate Studies</option>
+    </select>
+
+  <label class="sr-only" for="Name of School">Name of School</label>
+  <input [(ngModel)]="newEduc.school" name="school" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-8" id="" placeholder="Name of School - Write in full">
+</div><br>
+
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Degree Course">Degree Course</label>
+  <input [(ngModel)]="newEduc.course" name="course" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-8" id="" placeholder="Degree Course - Write in full">
+
+  <label class="sr-only" for="Year Graduated">Year Graduated</label>
+  <input [(ngModel)]="newEduc.yg" name="yg" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 " id="" placeholder="Year Graduated">
+  
+</div>
+
+<br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label for="HighestGrade" class="col-sm-2">Highest Grade/Level/Units Earned</label>
+  <input [(ngModel)]="newEduc.hg" name="hg" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="If not graduated">
+
+  <label class="col-sm-2" for="from">Inclusive dates of attendance</label>
+  <input [(ngModel)]="newEduc.from" name="from" type="number" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="From">
+
+  <label class="sr-only" for="to">To</label>
+  <input [(ngModel)]="newEduc.to" name="to" type="number" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-2" id="" placeholder="To">
+
+</div>
+<br>
+<div class="form-inline d-flex justify-content-between">
+
+  <label class="sr-only" for="Scholarship">Scholarship</label>
+  <input [(ngModel)]="newEduc.scholarship" name="scholarship" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-7" id="" placeholder="Scholarship/Academic Honors Received">
+
+  <button type="button" class="btn btn-success btn-circle" (click)="addEducation()">Submit</button>
+</div>
+<hr>
+
+<div class="form-inline d-flex justify-content-between">
+	<table class="table table-striped table-bordered table-condensed table-responsive col-sm-12" >
+	<thead>
+      <tr>
+          <th>Level</th>
+          <th>Name of School</th>
+          <th>Degree Course</th>
+          <th>Year Graduated</th>
+          <th>Highest Grade/ Level/ Units Earned</th>
+          <th>Scolarship/ Academic Honors Received</th>
+          <th>From</th>
+          <th>To</th>  
+          <th>Action</th>
+
+           
+      </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let educ of educations; let i = index;">
+       <td>{{educ.level}}</td>
+       <td>{{educ.school}}</td>
+       <td>{{educ.course}}</td>
+       <td>{{educ.yg}}</td>
+       <td>{{educ.hg}}</td>
+        <td>{{educ.scholarship}}</td>
+       <td>{{educ.from}}</td>
+       <td>{{educ.to}}</td>
+     
+       <td><button type="button" class="btn btn-danger btn-circle" (click)="removeEducation(i)"><i class="fa fa-times"></i></button></td>
+     </tr>
+  </tbody>			        
+		 </table>
+  
+</div>
+<div class="d-flex justify-content-end">
+   <button type="submit" class="btn btn-primary pull-right"  >Proceed</button>
+  </div>
+</form>
+
+</div>
+
+<template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+  </div>
+</template>

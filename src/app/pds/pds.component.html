@@ -1,0 +1,37 @@
+
+<div class="row">
+
+  <div class="card" style="width: 100%;">
+  <div class="card-block">
+    <h4 class="card-title">Personal Data Sheet - Data Entry</h4>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+
+  <ngb-tabset #t="ngbTabset">
+
+    <ngb-tab title="1st Page" id="page1" [disabled]="disable_page1">
+      <template ngbTabContent>
+          <app-pds1 (onProceed2)="disable1($event);"></app-pds1>
+      </template>
+    </ngb-tab>
+    <ngb-tab title="2nd Page" id="page2" [disabled]="disable_page2">
+      <template ngbTabContent>
+          <app-pds2 (onProceed3)="disable2();" [id]="id"></app-pds2>
+      </template>
+    </ngb-tab>
+    <ngb-tab title="3rd Page" id="page3" [disabled]="disable_page3">
+      <template ngbTabContent>
+          <app-pds3 (onProceed4)="disable3();" [id]="id"></app-pds3>
+      </template>
+    </ngb-tab>
+    <ngb-tab title="4th Page" id="page4" [disabled]="disable_page4">
+      <template ngbTabContent>
+          <app-pds4 [id]="id"></app-pds4>
+      </template>
+    </ngb-tab>
+
+</ngb-tabset>
+  </div>
+</div>
+</div>
+
+

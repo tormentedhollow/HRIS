@@ -1,0 +1,111 @@
+
+<br><button class="btn btn-outline-success" (click)="print()"><i class="fa fa-print"></i> Print</button>
+
+<div id="print-section" class="container" *ngIf="data.length>0">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="col-sm-12">
+        <img src="../../../../assets/bg/da_logo.jpg" class="img-rounded float-left" alt="DA LOGO" width="130" height="100">
+      </div>
+      <div style="width:100%">
+        <p class="text-center head">Republic of the Philippines<br><b>DEPARTMENT OF AGRICULTURE</b><br>Butuan City<br><br>
+        <br><b><u>STATEMENT OF LEAVE CREDITS</u></b><br></p>
+        <p class="text-right right">POSITION: <u>{{data[data.length-1].position}}</u></p>
+      </div>
+      <div>
+
+      </div>
+    </div>
+    <div>
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="3" style="text-align: left;">NAME: <i>{{data[0].sname}}, {{data[0].fname}} {{data[0].mname.charAt(0)}}.</i></th>
+        <th colspan="5" >1ST DAY OF SERVICE: <i>{{data[0]._from|date :"longDate"}}</i></th>
+        <th colspan="3" >DEPARTMENT OF AGRICULTURE</th>
+      </tr>
+      <tr>
+        <th rowspan="2" class="ns">PERIOD</th>
+        <th rowspan="2" class="ns">PARTICULARS</th>
+        <th colspan="4" class="ns">VACATION LEAVE</th>
+        <th colspan="4" class="ns">SICK LEAVE</th>
+        <th rowspan="2" class="ns">DATES & ACTION TAKEN ON APPLICATION FOR LEAVE</th>
+      </tr>
+      <tr>
+        <th class="ns">EARNED</th>
+        <th class="ns">ABS UND.W/P</th>
+        <th class="ns">BALANCE</th>
+        <th class="ns">ABS UND.W/P</th>
+        <th class="ns">EARNED</th>
+        <th class="ns">ABS UND.W/P</th>
+        <th class="ns">BALANCE</th>
+        <th class="ns">ABS UND.W/P</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="tf">
+      <template let-group ngFor [ngForOf]="stmt" let-i = "index">
+          <!--<tr *ngFor="let row of group.items">{{row}}</tr>-->
+        <tr>
+          <td>{{group.year}}</td>
+          <template [ngIf]="i>0">
+            <td><i><b>Beginning</b></i></td>
+            <td><i><b>Balance</b></i></td>
+            <td></td>
+            <td style="color:red"><i><b>{{group.b_vl| number : '1.1-3'}}</b></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="color:red"><i><b>{{group.b_sl| number : '1.1-3'}}</b></i></td>
+            <td></td>
+            <td></td>
+          </template>
+          <template [ngIf]="i==0">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </template>
+        </tr>
+        <template let-group2 ngFor [ngForOf]="group.month">
+        <tr>
+          <td>{{monthNames[group2.mo-1]}}</td>
+          <td>EL</td>
+          <td>{{group2.earned}}</td>
+          <td></td>
+          <td style="color:red" class="cntr">{{group2.b_vl| number : '1.1-3'}}</td>
+          <td></td>
+          <td>{{group2.earned}}</td>
+          <td></td>
+          <td style="color:red" class="cntr">{{group2.b_sl| number : '1.1-3'}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let row of group2.entries">
+          <td></td>
+          <td>
+            <span *ngIf="row.transaction==0" (click)="print()">({{row.dd}}-0-0) {{leavetype[row.type_of_leave]}}</span>
+            <span *ngIf="row.transaction!=0" (click)="print()">({{row.dd}}-{{row.hh}}-{{row.mm}}) {{trans[row.transaction]}}</span>
+          </td>
+          <td></td>
+          <td>{{row.vl}}</td>
+          <td style="color:red" class="cntr">{{row.b_vl| number : '1.1-3'}}</td>
+          <td><span *ngIf="row.type_of_leave==2"> SPL - {{row.dd}}</span></td>
+          <td></td>
+          <td>{{row.sl}}</td>
+          <td style="color:red" class="cntr">{{row.b_sl| number : '1.1-3'}}</td>
+          <td></td>
+          <td>{{row.remarks}}</td>
+        </tr>
+        </template>
+      </template>
+    </tbody>
+  </table>
+    </div>
+  </div>
+</div>

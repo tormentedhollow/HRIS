@@ -1,0 +1,37 @@
+<template #content let-c="close" let-d="dismiss">
+  <div class="modal-header alert-success">
+    <h6 class="modal-title">Employee's List</h6>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Civil Status</th>
+              <th>Age</th>
+              <th>Position</th>
+              <th>SG - SI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Doe, John</td>
+              <td>Male</td>
+              <td>Single</td>
+              <td>22</td>
+              <td>Regional Executive Director</td>
+              <td>27 - 1</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</template>
+
+<button class="btn btn-md btn-outline-success" (click)="open(content)">Launch Employee's List</button>
+<hr>

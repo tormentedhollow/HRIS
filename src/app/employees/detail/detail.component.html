@@ -1,0 +1,449 @@
+<div class="container">
+<br>
+<h3>PERSONAL DATA SHEET</h3> 
+<hr>
+<h4>I. PERSONAL INFORMATION</h4> 
+ <img *ngIf="Employees.Photo" src="assets/photo/{{Employees.Photo}}" class="rounded img-thumbnail float-right" width="100" height= "100" alt="...">
+ <img *ngIf="!Employees.Photo" src="assets/photo/no.gif" alt="" class="rounded img-thumbnail float-right" width="100" height= "100">
+ <br>
+<div class="row">
+    <div class="col">
+     <label for="surname">Surname: <strong>{{Employees.Sname | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="firstname">Firstname: <strong>{{Employees.Fname | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="middlename">Middlename: <strong>{{Employees.Mname | uppercase}}</strong></label>
+    </div>
+      <div class="col">
+   <label for="ext">Extension: <strong>{{Employees.Extname | uppercase}}</strong></label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+     <label for="bday">Birthday: <strong>{{Employees.DoB |  date:shortDate}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="pbirth">Place of birth: <strong>{{Employees.PoB | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="sex">Sex: <strong>{{Employees.sex | uppercase}}</strong></label>
+    </div>
+      <div class="col">
+   <label for="cs">Civil Status: <strong>{{Employees.civil_status | uppercase}}</strong></label>
+    </div>
+  </div>
+
+   <div class="row">
+    <div class="col">
+     <label for="cit">Citizenship: <strong>{{Employees.citizenship | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="height">Height: <strong>{{Employees.Height}} m</strong></label>
+    </div>
+    <div class="col">
+   <label for="weight">Weight: <strong>{{Employees.Weight}} kg</strong></label>
+    </div>
+      <div class="col">
+   <label for="bt">Bloodtype: <strong>{{Employees.BT | uppercase}}</strong></label>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="col">
+     <label for="gsis">GSIS ID NO: <strong>{{Employees.GSIS_ID | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="pagibig">PAG-IBIG NO: <strong>{{Employees.PAGIBIG_ID | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="sss">SSS NO: <strong>{{Employees.SSS_ID | uppercase}}</strong></label>
+    </div>
+      <div class="col">
+   <label for="ph">PHILHEALTH NO: <strong>{{Employees.PHILHEALTH_ID | uppercase}}</strong></label>
+    </div>
+  </div>
+
+      <div class="row">
+    <div class="col">
+     <label for="adsress">Residential Address: <strong>{{Employees.R_Address | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="zipcode">Zip code: <strong>{{Employees.R_ZipCode }}</strong></label>
+    </div>
+    <div class="col">
+   <label for="telno">Telephone No: <strong>{{Employees.R_Tel | uppercase}}</strong></label>
+    </div>
+  </div>
+
+        <div class="row">
+    <div class="col">
+     <label for="address2">Permanent Address: <strong>{{Employees.P_Address | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="zipcode2">Zip code: <strong>{{Employees.P_ZipCode }}</strong></label>
+    </div>
+    <div class="col">
+   <label for="telno2">Telephone No: <strong>{{Employees.P_Tel | uppercase}}</strong></label>
+    </div>
+  </div>
+
+         <div class="row">
+    <div class="col">
+     <label for="email">Email Address: <strong>{{ Employees.Email }}</strong></label>
+    </div>
+    <div class="cel">
+   <label for="cel">Cellphone No: <strong>{{Employees.Cell | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="emp">Agency Employee No: <strong>{{Employees.A_Emp_ID}}</strong></label>
+    </div>
+   <div class="col">
+   <label for="tin">TIN: <strong>{{Employees.TIN}}</strong> </label>
+    </div>
+  </div>
+
+  <hr>
+  <h4>II. FAMILY BACKGROUND</h4> <br>
+
+    <div class="row">
+    <div class="col">
+     <label for="s_surname">Spouse's Surname: <strong>{{Employees.s_surname | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="s_firstname">Firstname: <strong>{{Employees.s_firstname | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="s_middlename">Middlename: <strong>{{Employees.s_middlename | uppercase}}</strong></label>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="col">
+     <label for="s_occupation">Occupation: <strong>{{Employees.s_occupation | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="s_employer">Employer/Bus.Name: <strong>{{Employees.s_employer | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="s_tel">Telephone No: <strong> {{Employees.s_tel}}</strong></label>
+    </div>
+  </div>
+
+
+    <div class="row">
+    <div class="col">
+     <label for="f_surname">Father's Surname: <strong>{{Employees.f_surname | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="f_fname">Firstname: <strong>{{Employees.f_firstname | uppercase}}</strong></label>
+    </div>
+       <div class="col">
+   <label for="f_mname">Middlename: <strong>{{Employees.f_middlename | uppercase}}</strong></label>
+    </div>
+    </div>
+
+        <div class="row">
+    <div class="col">
+     <label for="m_surname">Mother's Maiden Surname: <strong>{{Employees.m_surname | uppercase}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="m_fname">Firstname: <strong>{{Employees.m_firstname | uppercase}}</strong></label>
+    </div>
+       <div class="col">
+   <label for="m_mname">Middlename: <strong>{{Employees.m_middlename | uppercase}}</strong></label>
+    </div>
+    </div>
+
+      <div class="row">
+    <div class="col">
+     <label for="child">Name of child:</label>
+    </div>
+    <div class="col">
+   <label for="child_bday">Birthday:</label>
+    </div>
+    </div>
+
+    <div class="row" *ngFor="let item of Child">
+    <div class="col">
+     <label for="child"> <strong>{{item.name | uppercase}}</strong> </label>
+    </div>
+    <div class="col">
+   <label for="child_bday"><strong>{{item.DoB | date: shortDate}}</strong></label>
+    </div>
+    </div>
+
+      <hr>
+  <h4>III. EDUCATIONAL BACKGROUND</h4> <br>
+
+      <div class="row">
+    <div class="col">
+     <label for="level">Level:</label>
+    </div>
+    <div class="col">
+   <label for="school">Name of School:</label>
+    </div>
+       <div class="col">
+   <label for="degree">Degree Course:</label>
+    </div>
+
+    <div class="col">
+   <label for="yg">Year Graduated:</label>
+    </div>
+
+          <div class="col">
+   <label for="hg">Highest Grade/ Level/ Units Earned:</label>
+    </div>
+          <div class="col">
+   <label for="scholarship">Scolarship/ Academic Honors Received:</label>
+    </div>
+              <div class="col">
+   <label for="from">From:</label>
+    </div>
+              <div class="col">
+   <label for="to">To:</label>
+    </div>
+    </div>
+
+      <div class="row" *ngFor="let item of Education">
+    <div class="col">
+     <label for="level"><strong>{{item.Level}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="school"><strong>{{item.School_Name}}</strong></label>
+    </div>
+       <div class="col">
+   <label for="degree"><strong>{{item.Degree}}</strong></label>
+    </div>
+       <div class="col">
+   <label for="yg"><strong>{{item.Year_Grad}}</strong></label>
+    </div>
+          <div class="col">
+   <label for="hg"><strong>{{item.Highest_GLUE}}</strong></label>
+    </div>
+          <div class="col">
+   <label for="scholarship"><strong>{{item.SAHR}}</strong></label>
+    </div>
+              <div class="col">
+   <label for="from"><strong>{{item.IDA_From}}</strong></label>
+    </div>
+              <div class="col">
+   <label for="to"><strong>{{item.IDA_To}}</strong></label>
+    </div>
+    </div>
+
+
+
+
+
+      <hr>
+  <h4>IV. Civil Service Eligibility</h4> <br>
+
+    <div class="row">
+    <div class="col">
+     <label for="cs">Career Service/ RA 1080 (Board/ BAR) Under Special Laws/ CES/ CSEE:</label>
+    </div>
+    <div class="col">
+   <label for="rating">Rating:</label>
+    </div>
+       <div class="col">
+   <label for="doe">Date of Examination/ Conferment:</label>
+    </div>
+          <div class="col">
+   <label for="poe">Place of Examination/ Conferment:</label>
+    </div>
+          <div class="col">
+   <label for="ln">License Number:</label>
+    </div>
+              <div class="col">
+   <label for="dor">Date of Release:</label>
+    </div>
+
+    </div>
+
+        <div class="row" *ngFor="let item of CSE">
+    <div class="col">
+     <label for="cs"><strong>{{item.CS}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="rating"><strong>{{item.Rating}}</strong></label>
+    </div>
+       <div class="col">
+   <label for="doe"><strong *ngIf="item.DoEC!='-'">{{item.DoEC | date: shortDate}}</strong><strong *ngIf="item.DoEC=='-'">{{item.DoEC}}</strong></label>
+    </div>
+          <div class="col">
+   <label for="poe"><strong>{{item.PoEC}}</strong></label>
+    </div>
+          <div class="col">
+   <label for="ln"><strong>{{item.License_Num}}</strong></label>
+    </div>
+              <div class="col">
+   <label for="dor"><strong *ngIf="item.License_DoR!='-'">{{item.License_DoR | date: shortDate}}</strong><strong *ngIf="item.License_DoR=='-'">-</strong></label>
+    </div>
+
+    </div>
+
+          <hr>
+  <h4>V. Work Experience (Include private employment. Start from your current work.)</h4> <br>
+
+    <div class="row">
+    <div class="col">
+     <label for="from">From:</label>
+    </div>
+    <div class="col">
+   <label for="to">To:</label>
+    </div>
+       <div class="col">
+   <label for="position">Position Title:</label>
+    </div>
+          <div class="col">
+   <label for="sg">Salary Grade & Step Incriment:</label>
+    </div>
+          <div class="col">
+   <label for="status">Status of Appointment:</label>
+    </div>
+              <div class="col">
+   <label for="gs">Government Service:</label>
+    </div>
+
+    </div>
+
+      <div class="row" *ngFor="let item of WE">
+    <div class="col">
+     <label for="from"><strong>{{item._from | date: shortDate}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="to"><strong>{{item._to | date: shortDate}}</strong></label>
+    </div>
+       <div class="col">
+   <label for="position"><strong>{{item.position}}</strong></label>
+    </div>
+          <div class="col">
+   <label for="sg"><strong>{{item.salary}}</strong></label>
+    </div>
+          <div class="col">
+   <label for="status"><strong>{{item.status}}</strong></label>
+    </div>
+              <div class="col">
+   <label for="gs"><strong>{{item.gov_service}}</strong></label>
+    </div>
+
+    </div>
+
+              <hr>
+  <h4>VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC / NON-GOVERNMENT / PEOPLE / VOLUNTARY ORGANIZATION/S</h4> <br>
+
+    <div class="row">
+    <div class="col">
+     <label for="organization_name">Name & Address of Organization</label>
+    </div>
+        <div class="col">
+   <label for="from">From:</label>
+    </div>
+    <div class="col">
+   <label for="to">To:</label>
+    </div>
+       <div class="col">
+   <label for="hours">Number of Hours:</label>
+    </div>
+          <div class="col">
+   <label for="position">Position / Nature of Work:</label>
+    </div>
+    </div>
+
+    <div class="row" *ngFor="let item of VWI">
+    <div class="col">
+     <label for="organization_name"><strong>{{item.Org_Name}}</strong></label>
+    </div>
+        <div class="col">
+   <label for="from"><strong>{{item.IDA_From | date: shortDate}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="to"><strong>{{item.IDA_To | date: shortDate}}</strong></label>
+    </div>
+       <div class="col">
+   <label for="hours"><strong>{{item.Hours}}</strong></label>
+    </div>
+          <div class="col">
+   <label for="position"><strong>{{item.PosNoW}}</strong></label>
+    </div>
+    </div>
+
+   <hr>
+  <h4>VII. TRAINING PROGRAMS (Start from the most recent training.)</h4> <br>
+
+    <div class="row">
+    <div class="col">
+     <label for="title">Title of Seminar/ Conference/ Workshop/ Short Courses</label>
+    </div>
+        <div class="col">
+   <label for="from">From:</label>
+    </div>
+    <div class="col">
+   <label for="to">To:</label>
+    </div>
+       <div class="col">
+   <label for="hours">Number of Hours:</label>
+    </div>
+          <div class="col">
+   <label for="conducted">Conducted/ Sponsored By:</label>
+    </div>        
+    </div>
+
+    <div class="row" *ngFor="let item of TP">
+    <div class="col">
+     <label for="title"><strong>{{item.Title | uppercase}}</strong></label>
+    </div>
+        <div class="col">
+   <label for="from"><strong>{{item.IDA_From | date: shortDate}}</strong></label>
+    </div>
+    <div class="col">
+   <label for="to"><strong>{{item.IDA_To | date: shortDate}}</strong></label>
+    </div>
+       <div class="col">
+   <label for="hours"><strong>{{item.Hours}}</strong></label>
+    </div>
+          <div class="col">
+   <label for="conducted"><strong>{{item.Conducted_By}}</strong></label>
+    </div>        
+    </div>
+
+  <hr>
+  <h4>VIII. OTHER INFORMATION</h4> <br>
+
+    <div class="row">
+    <div class="col">
+     <label for="skills">Special Skills/Hobbies</label>
+    </div>
+        <div class="col">
+   <label for="non_academic">Non-Academic Distinction/ Recognition:</label>
+    </div>
+       <div class="col">
+   <label for="membership">Membership in Association/ Organization:</label>
+    </div>       
+    </div>
+
+    <div class="row">
+    <div class="col">
+     <ul>
+       <li *ngFor="let item of Skills"> <strong>{{item.sp_name}}</strong></li>
+     </ul>
+    </div>
+    <div class="col">
+       <ul>
+       <li *ngFor="let item of NA"><strong> {{item.na_name}}</strong></li>
+     </ul>
+    </div>
+       <div class="col">
+        <ul>
+       <li *ngFor="let item of Membership"> <strong>{{item.m_name}}</strong></li>
+     </ul>
+    </div>       
+    </div>
+
+
+
+  <button *ngIf="set==1" type="button" class="btn btn-outline-info" (click)="goBack()">Go back</button>
+  </div>
